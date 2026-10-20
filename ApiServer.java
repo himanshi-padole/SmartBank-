@@ -17,10 +17,15 @@ public class ApiServer {
     private static final Bank bank = Bank.loadFromFile();
 
     public static void main(String[] args) throws IOException {
-        HttpServer server = HttpServer.create(
-                new InetSocketAddress(
-    Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"))
-)
+
+HttpServer server = HttpServer.create(
+        new InetSocketAddress(
+                Integer.parseInt(
+                        System.getenv().getOrDefault("PORT", "8080")
+                )
+        ),
+        0
+);
 
         server.createContext("/api/", exchange -> {
             addCors(exchange);
