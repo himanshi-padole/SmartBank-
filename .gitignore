@@ -1,0 +1,8 @@
+# Java compiled files
+*.class
+
+# SmartBank saved account data
+smartbank.dat
+
+# VS Code settings
+.vscode/

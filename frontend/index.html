@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBank | Banking Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <a href="#home" class="brand">
+            <span class="brand-icon">▤</span>
+            <span>
+                <strong>SmartBank</strong>
+                <small>Banking Made Simple</small>
+            </span>
+        </a>
+
+        <nav class="side-nav">
+            <a href="#home" class="nav-link active"><span>⌂</span> Home</a>
+            <a href="#create-account" class="nav-link"><span>＋</span> Create Account</a>
+            <a href="#deposit-section" class="nav-link"><span>↓</span> Deposit</a>
+            <a href="#withdraw-section" class="nav-link"><span>↑</span> Withdraw</a>
+            <a href="#passbook-section" class="nav-link"><span>▤</span> Passbook</a>
+            <a href="#accounts" class="nav-link"><span>▧</span> Account Details</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <span class="topbar-label">BANKING MANAGEMENT SYSTEM</span>
+            <div class="user-label">Welcome, <strong>User</strong></div>
+        </header>
+
+        <section class="welcome" id="home">
+            <div class="welcome-copy">
+                <p class="eyebrow">WELCOME TO SMARTBANK</p>
+                <h1>Your goals.<br>Our support.</h1>
+                <p class="welcome-description">
+                    Manage your money, keep track of your accounts
+                    and take control of your everyday banking.
+                </p>
+                <a class="primary-link" href="#services">
+                    Explore Services <span>→</span>
+                </a>
+            </div>
+
+            <div class="hero-art" aria-hidden="true">
+                <div class="art-circle"></div>
+                <div class="art-sun"></div>
+                <div class="art-roof"></div>
+                <div class="art-building">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="art-base"></div>
+            </div>
+        </section>
+
+        <div class="section-heading">
+            <div>
+                <h2>Account Summary</h2>
+                <span class="heading-line"></span>
+            </div>
+            <p class="muted">Your banking at a glance</p>
+        </div>
+
+        <section class="summary-grid">
+            <article class="summary-card">
+                <div class="summary-icon">♧</div>
+                <div>
+                    <p>Total Accounts</p>
+                    <h3 id="totalAccounts">0</h3>
+                    <small>Accounts created</small>
+                </div>
+            </article>
+
+            <article class="summary-card">
+                <div class="summary-icon">▣</div>
+                <div>
+                    <p>Total Balance</p>
+                    <h3 id="totalBalance">₹ 0</h3>
+                    <small>Combined balance</small>
+                </div>
+            </article>
+
+            <article class="summary-card quick-card">
+                <div class="summary-icon">↔</div>
+                <div>
+                    <p>Quick Actions</p>
+                    <h3 class="quick-title">Manage your money</h3>
+                    <a href="#services" class="outline-link">View Services</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="panel" id="services">
+            <div class="section-heading">
+                <div>
+                    <h2>Banking Services</h2>
+                    <p class="muted">Choose a service to get started.</p>
+                </div>
+            </div>
+
+            <div class="service-tabs">
+                <a class="service-tab selected" href="#create-account">Create Account</a>
+                <a class="service-tab" href="#deposit-section">Deposit</a>
+                <a class="service-tab" href="#withdraw-section">Withdraw</a>
+                <a class="service-tab" href="#passbook-section">Passbook</a>
+            </div>
+
+            <div class="service-form" id="create-account">
+                <h3>Create New Account</h3>
+                <p class="muted">Enter the account holder's details below.</p>
+
+                <form id="createForm">
+                    <div class="form-grid">
+                        <label>
+                            Account Holder Name
+                            <input type="text" id="name" placeholder="Enter full name" required>
+                        </label>
+
+                        <label>
+                            Mobile Number
+                            <input type="tel" id="mobile" placeholder="Enter mobile number" required>
+                        </label>
+
+                        <label>
+                            Account Type
+                            <select id="accountType" required>
+                                <option value="">Select account type</option>
+                                <option value="Savings">Savings Account</option>
+                                <option value="Current">Current Account</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Initial Deposit (₹)
+                            <input type="number" id="initialDeposit" min="0" placeholder="Enter amount" required>
+                        </label>
+                    </div>
+
+                    <button type="submit">Create Account →</button>
+                </form>
+            </div>
+
+            <div class="service-form compact-form" id="deposit-section">
+                <h3>Deposit Money</h3>
+
+                <form id="depositForm">
+                    <div class="form-grid">
+                        <label>
+                            Account Number
+                            <input id="depositAccount" type="text" placeholder="Enter account number" required>
+                        </label>
+
+                        <label>
+                            Deposit Amount (₹)
+                            <input id="depositAmount" type="number" min="1" placeholder="Enter amount" required>
+                        </label>
+                    </div>
+
+                    <button type="submit">Deposit Money</button>
+                </form>
+            </div>
+
+            <div class="service-form compact-form" id="withdraw-section">
+                <h3>Withdraw Money</h3>
+
+                <form id="withdrawForm">
+                    <div class="form-grid">
+                        <label>
+                            Account Number
+                            <input id="withdrawAccount" type="text" placeholder="Enter account number" required>
+                        </label>
+
+                        <label>
+                            Withdrawal Amount (₹)
+                            <input id="withdrawAmount" type="number" min="1" placeholder="Enter amount" required>
+                        </label>
+                    </div>
+
+                    <button type="submit">Withdraw Money</button>
+                </form>
+            </div>
+
+            <div class="service-form compact-form" id="passbook-section">
+                <h3>Balance and Account Details</h3>
+
+                <form id="balanceForm">
+                    <label>
+                        Account Number
+                        <input id="balanceAccount" type="text" placeholder="Enter account number" required>
+                    </label>
+
+                    <button type="submit">Check Balance</button>
+                    <div class="result" id="balanceResult"></div>
+                </form>
+
+                <form id="infoForm">
+                    <label>
+                        Account Number
+                        <input id="infoAccount" type="text" placeholder="Enter account number" required>
+                    </label>
+
+                    <button type="submit" class="secondary">View Account Details</button>
+                    <div class="result" id="infoResult"></div>
+                </form>
+
+                <form id="passbookForm">
+                    <div class="form-grid">
+                        <label>
+                            Account Number
+                            <input id="passbookAccount" type="text" placeholder="Enter account number" required>
+                        </label>
+
+                        <label>
+                            From Date
+                            <input id="fromDate" type="date">
+                        </label>
+
+                        <label>
+                            To Date
+                            <input id="toDate" type="date">
+                        </label>
+                    </div>
+
+                    <button type="submit" class="secondary">View Passbook</button>
+                    <div class="result" id="passbookResult"></div>
+                </form>
+            </div>
+
+            <p id="message" role="status"></p>
+        </section>
+
+        <section class="panel accounts-panel" id="accounts">
+            <div class="section-heading">
+                <div>
+                    <h2>Your Accounts</h2>
+                    <span class="heading-line"></span>
+                </div>
+
+                <button type="button" class="secondary refresh-button" id="refreshAccounts">
+                    Refresh Accounts
+                </button>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Account No.</th>
+                            <th>Account Holder</th>
+                            <th>Account Type</th>
+                            <th>Balance</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="accountsTable">
+                        <tr>
+                            <td colspan="6" class="empty-state">Loading accounts...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            <span>© 2025 SmartBank | Banking Management System</span>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
