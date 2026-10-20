@@ -18,7 +18,9 @@ public class ApiServer {
 
     public static void main(String[] args) throws IOException {
         HttpServer server = HttpServer.create(
-                new InetSocketAddress(8080), 0);
+                new InetSocketAddress(
+    Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"))
+)
 
         server.createContext("/api/", exchange -> {
             addCors(exchange);
